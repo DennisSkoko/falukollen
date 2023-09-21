@@ -1,0 +1,5 @@
+namespace: falukollen
+
+resources:
+  - namespace.yaml
+  - ../src/api/deploy
