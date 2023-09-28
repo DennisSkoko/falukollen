@@ -8,11 +8,11 @@ mod storage;
 
 use analyzer::analyze_storage_data;
 use dotenv::dotenv;
-use std::{env, error::Error, path::PathBuf};
+use std::{env, error::Error, path::PathBuf, process::exit};
 use storage::Storage;
 
 fn analyze() -> Result<(), Box<dyn Error>> {
-    dotenv()?;
+    dotenv().ok();
 
     let storage_folder_path = PathBuf::from(env::var("APP_STORAGE_FOLDER")?);
     let storage = Storage::new(storage_folder_path);
@@ -27,5 +27,6 @@ fn analyze() -> Result<(), Box<dyn Error>> {
 fn main() {
     if let Err(error) = analyze() {
         eprintln!("Error occurred: {}", error);
+        exit(1);
     }
 }
