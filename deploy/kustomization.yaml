@@ -3,3 +3,4 @@ namespace: falukollen
 resources:
   - namespace.yaml
   - ../src/api/deploy
+  - ../src/analyzer/deploy
