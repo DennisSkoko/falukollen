@@ -20,3 +20,18 @@ export async function readTodaysData() {
   await ensureDir(dirname(path))
   return /** @type {ScrapedData} */ (JSON.parse(await readFile(path, 'utf8')))
 }
+
+/**
+ * @param {string} id
+ */ 
+export async function readAnalyzedData(id) {
+  if (id.includes('/') || id.includes('.')) {
+    console.error('Specified id is not a valid id', { id })
+    throw new Error('Specified id is not a valid id')
+  }
+
+  const path = join(process.env.APP_STORAGE_FOLDER, 'analyzed', `${id}.json`)
+
+  await ensureDir(dirname(path))
+  return /** @type {AnalyzedSausage} */ (JSON.parse(await readFile(path, 'utf8')))
+}

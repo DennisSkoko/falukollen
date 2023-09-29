@@ -21,3 +21,7 @@ interface ScrapedData {
   date: string
   sausages: Sausage[]
 }
+
+interface AnalyzedSausage {
+  prices: { value: number, date: string }
+}
