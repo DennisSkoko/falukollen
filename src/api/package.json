@@ -1,5 +1,6 @@
 {
   "name": "falukollen-api",
+  "private": true,
   "type": "module",
   "scripts": {
     "start": "supervisor -n error -- -r dotenv/config src/server.js",
