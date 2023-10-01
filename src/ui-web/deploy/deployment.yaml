@@ -1,0 +1,48 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: ui-web
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels: &labels
+      app.kubernetes.io/name: ui-web
+  template:
+    metadata:
+      labels: *labels
+    spec:
+      containers:
+        - name: ui-web
+          image: registry.home.dennisskoko.com/falukollen/ui-web
+          securityContext:
+            allowPrivilegeEscalation: false
+            # TODO: change to non root user
+            # capabilities:
+            #   drop: ['ALL']
+            # runAsNonRoot: true
+            # runAsUser: 101
+            # runAsGroup: 101
+            seccompProfile:
+              type: RuntimeDefault
+          volumeMounts:
+            - name: config
+              mountPath: /usr/share/nginx/html/config.json
+              subPath: config.json
+      volumes:
+        - name: config 
+          configMap:
+            name: config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui-web
+
+spec:
+  selector:
+    app.kubernetes.io/name: ui-web
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80

@@ -1,0 +1,8 @@
+resources:
+  - deployment.yaml
+  - ingress.yaml
+
+configMapGenerator:
+  - name: config
+    files:
+      - config.json

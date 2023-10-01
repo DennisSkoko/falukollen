@@ -1,0 +1,16 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ui-web
+
+spec:
+  entryPoints:
+    - public
+  tls:
+    certResolver: main
+  routes:
+    - kind: Rule
+      match: Host(`falukollen.dennisskoko.com`)
+      services:
+        - name: ui-web
+          port: http
