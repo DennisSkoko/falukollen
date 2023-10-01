@@ -29,7 +29,7 @@ class SausageListItem extends Component {
 
     return this.sausage.url
       ? html`
-        <a class=${styles.card} href=${this.sausage.url} rel="noopener">${inner}</a>
+        <a class=${styles.card} href=${this.sausage.url} target="_blank" rel="noopener">${inner}</a>
       `
       : html`
         <section class=${styles.card}>${inner}</section>
