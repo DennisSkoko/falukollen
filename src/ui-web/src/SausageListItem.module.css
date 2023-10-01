@@ -1,0 +1,23 @@
+.card {
+  background-color: var(--color-primary);
+  padding: 1em;
+  border-radius: .5em;
+  color: var(--color-text);
+  display: block;
+  text-decoration: none;
+}
+
+.header {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.desc {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+.desc p {
+  margin: 0;
+}

@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+  --color-backgroud: lightsalmon;
+  --color-text: white;
+  --color-primary: red;
+
+  --font-text-family: 'Montserrat', sans-serif;
+  --font-header-family: 'Anton', sans-serif;
+}
+
+html {
+  background-color: var(--color-backgroud);
+  color: var(--color-text);
+  font-family: var(--font-text-family);
+}

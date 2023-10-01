@@ -1,0 +1,10 @@
+.container {
+  max-width: 64em;
+  margin: 1.5em auto 8em;
+  padding: 0 1em;
+}
+
+.content {
+  display: block;
+  margin-top: 3em;
+}

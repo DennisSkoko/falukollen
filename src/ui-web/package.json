@@ -1,0 +1,17 @@
+{
+  "name": "falukollen-ui-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --host"
+  },
+  "dependencies": {
+    "lit-html": "^2.8.0",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "vite": "^4.4.5"
+  }
+}
