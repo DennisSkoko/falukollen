@@ -5,6 +5,7 @@ metadata:
 
 spec:
   schedule: 5 0 * * *
+  timeZone: Europe/Stockholm
   jobTemplate:
     spec:
       template:
